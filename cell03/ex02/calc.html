@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculator</title>
+    <link rel="stylesheet" type="text/css" href="balloon.css">
+</head>
+<body>
+    <h1 class="title">Calculator</h1>
+    <form class="calc">
+        <input type="text" id="myInput1" name="myInput1">
+        <select id="operator">
+            <option value="*">*</option>
+            <option value="/">/</option>
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="%">%</option>
+        </select>
+        <input type="text" id="myInput2" name="myInput2">
+        <input type="submit" value="Try me!">
+    </form>
+    <div class="result-box" id="txt">
+        
+    </div>
+    </body>
+</html>
+
+<style>
+body {
+    background-color: cadetblue;
+}
+
+    .calc {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        }
+
+    .calc input {
+        width: 200px; 
+        padding: 10px; 
+        font-size: 16px;
+    }
+
+    .result-box {
+        display: flex;
+        background-color:rgb(125, 197, 200);
+        width: 600px; 
+        height: 40px; 
+        padding: 10px;
+        justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 100px;
+        border: 2px solid #ffffff;
+        border-radius: 10px;
+        color: #ffffff;
+        font-family: 'Gill Sans';
+        font-size: 37px;
+        font-style: bold;
+        font-style: italic;
+    }
+
+    .calc select {
+        width: 50px; 
+        padding: 10px; 
+        font-size: 16px;
+    }
+
+    .title {
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-content:  center;
+    }
+</style>
+
+<script>
+var myInput1 = document.getElementById('myInput1');
+var myInput2 = document.getElementById('myInput2');
+var operator = document.getElementById('operator');
+var text = document.getElementById('txt');
+var submitButton = document.querySelector('input[type="submit"]');
+
+submitButton.addEventListener('click', function(event) {
+  event.preventDefault();
+  var lhs = myInput1.value;
+  var rhs = myInput2.value;
+  var op = operator.value;
+  
+  if (check_input(lhs, rhs, op))
+    print_result(lhs, rhs, op);
+});
+
+function print_error(err) {
+    text.textContent = err;
+    if (err != "Error :(")
+        console.log(err);
+    alert(err);
+    return (0);
+}
+
+function isPositiveInt(valeur) {
+  var regex = /^\d+$/;
+  return regex.test(valeur);
+}
+
+function check_input(lhs, rhs, op) {
+    if (!isPositiveInt(lhs) || !isPositiveInt(rhs))
+        return (print_error("Error :("), 0)
+    if (rhs == 0 && (op == '%' || op == '/'))
+        return (print_error("It's over 9000!"), 0)
+    return (1);
+}
+
+setInterval(function() {
+    alert("Please use me...");
+}, 30000);
+
+function print_result(lhs, rhs, op) {
+    var result = eval(lhs + op + rhs);
+    text.textContent = result;
+    console.log(result);
+    alert(result);
+};
+</script>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ToDo</title>
+</head>
+<body>
+    <h1 class="title">ToDoOrNotToDo</h1>
+    <button id="myButton" class="button"><b>NEW</b></button>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <button id="cross" class="cross">X</button>
+            <h2>Ajoutez une nouvelle tache</h2>
+            <input type="text" id="input1" placeholder="Heure">
+            <input type="text" id="input2" placeholder="Tache">
+            <button id="submitBtn">Créer</button>
+        </div>
+    </div>
+    <div id="myModal2" class="modal">
+        <div class="modal-content">
+            <h2>Etes vous surs de supprimer ?</h2>
+            <button id="check_oui">oui</button>
+            <button id="check_non">non</button>
+        </div>
+    </div>
+    <div id="ft_list" class="ft_list">
+        <table id="myTable" class="table">
+            <tbody>
+                <tr>
+                    <td class="row1"><b>Hour</b></td>
+                    <td class="row2"><b>ToDo's</b></td>
+                </tr>
+            </tbody>
+        </table>
+        
+    </div>
+</body>
+</html>
+
+<style>
+
+    body {
+        background-color:rgb(94, 174, 255);
+    }
+
+    .title {
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-content:  center;
+    }
+
+    .row1 {
+        width: 100px;
+        height: 50px;
+        text-align: center;
+    }
+
+    .row2 {        
+        width: 500px;
+        height: 50px;
+        text-align: center;
+    }
+
+    .button {
+        color: white;
+        height: 50px;
+        width: 50px;
+        background-color:rgb(134, 248, 254);
+        border-color: rgb(255, 255, 255);
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items:  center;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 20px;
+    }
+
+    td {
+        color: aliceblue;
+        border: 4px solid rgb(255, 255, 255);
+    }
+
+    .table {
+        display: flex;
+        border-collapse: collapse;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .modal2 {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+        
+    .modal-content {
+        background-color: #fefefe;
+        margin: 15% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 300px;
+    }
+    </style>
+
+<script>
+    var button = document.getElementById('myButton');
+    var modal = document.getElementById('myModal');
+    var modal2 = document.getElementById('myModal2');
+    var Creation = document.getElementById('submitBtn');
+    var cross = document.getElementById('cross');
+
+    var check_oui = document.getElementById('check_oui');
+    var check_non = document.getElementById('check_non');
+
+    var input1 = document.getElementById('input1');
+    var input2 = document.getElementById('input2');
+
+    var table = document.getElementById('myTable').getElementsByTagName('tr')[1];
+    var selected_row = null;
+
+    button.addEventListener('click', function() {
+        
+    });
+
+    button.addEventListener('click', function() {
+        modal.style.display = 'block';
+    });
+
+    function addTableRow(_in1, _in2) {
+        var table = document.getElementById('myTable').getElementsByTagName('tbody')[0];
+        var newRow = table.insertRow(1); 
+        var cell1 = newRow.insertCell(0);
+        var cell2 = newRow.insertCell(1);
+        cell1.className = 'row1';
+        cell2.className = 'row2';
+        cell1.innerHTML = _in1;
+        cell2.innerHTML = _in2;
+        newRow.addEventListener('click', function() {   
+            selected_row = this;
+            modal2.style.display = 'block';
+    });
+}
+
+    check_oui.addEventListener('click', function() {
+        modal2.style.display = 'none';
+        selected_row.remove();
+        });
+
+    Creation.addEventListener('click', function() {
+        modal.style.display = 'none';
+        var _in1 = input1.value;
+        var _in2 = input2.value;
+        if (_in1 == '' || _in2 == '')
+            return;
+        addTableRow(_in1, _in2);
+    });
+
+    cross.addEventListener('click', function() {
+        modal.style.display = 'none';
+    });
+
+    check_non.addEventListener('click', function() {
+        modal2.style.display = 'none';
+    });
+
+</script>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exemple de code JavaScript</title>
+    <link rel="stylesheet" type="text/css" href="background.css">
+</head>
+<body>
+    <button id="myButton">Cliquez-moi</button>
+</body>
+</html>
+
+<script>
+function getRandomColor() {
+    var red = Math.floor(Math.random() * 256);
+    var green = Math.floor(Math.random() * 256);
+    var blue = Math.floor(Math.random() * 256);
+    var color = 'rgb(' + red + ',' + green + ',' + blue + ')';
+    return color;
+}
+
+var button = document.getElementById('myButton');
+
+button.addEventListener('click', function() {
+    document.body.style.backgroundColor = getRandomColor();
+});
+</script>

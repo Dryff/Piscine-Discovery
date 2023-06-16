@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <style>
+    .container {
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      height: 10vh;
+  }
+  </style>
+<head>
+  <title>Ma page HTML</title>
+</head>
+<body>
+  <div class="container">
+  <h1>Piscine Web</h1>
+  <i><u>La premiere piscine web de fou attention</u></i>
+</div>
+<button id="myButton">Cliquez ici</button>
+<p id="myText"></p>
+</body>
+  <script>
+  var myButton = document.getElementById('myButton');
+  var myText = document.getElementById('myText');
+
+  myButton.addEventListener('click', function() {
+    myText.textContent = "Le bouton a été cliqué !";
+  });
+  </script>
+</html>

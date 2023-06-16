@@ -1,0 +1,99 @@
+.titre{
+    padding: 0px;
+    font-size: 10px;
+    font-weight: bold;
+    color: #000000;
+    text-align: center;
+    font-family: cursive;
+}
+
+.rectangle {
+    background-image: url("bonjour"); /* Specify the URL or file path of the image */
+    background-size: 500px; /* Crop the image to cover the entire rectangle */
+    background-position: -40px bottom; /* Crop the image to cover the entire rectangle */
+    border: 2px solid #000000;
+    margin-left: auto;
+    margin-right: auto;
+    width: 250px;
+    height: 350px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 187, 255, 0.75);
+    flex-direction: column;
+    border: 4px solid #ffffff;
+    display: flex;
+    overflow: hidden;
+}
+
+.imagegpa {
+    height: 150px;
+    background-color: #ffffff;
+    border-radius: 10px 10px 0px 0px;
+    width: 100%; 
+}
+
+
+
+.bandeau {
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    height: 1%;
+    margin-bottom: 0px;
+}
+
+.bandeau2 {
+    text-align: center;
+    color: white;
+    background-color: #00000061;
+    height: 12%;
+    display: flex;
+    align-items: center; /* Centrer verticalement */
+    justify-content: center; /* Centrer horizontalement */
+}
+.login{
+    font-size: 40px;
+    font-weight: bold;
+    font-family: cursive;
+    color: #ffffff;
+    text-align: center;
+}
+
+.desc{
+    font-size: 20px;
+    font-weight: bold;
+    font-family: cursive;
+    color: #ffffffb7;
+    text-align: center;
+}
+
+.lvl{
+    font-size: 25px;
+    font-weight: bold;
+    font-family: cursive;
+    color: #ffffff;
+    text-align: center;
+}
+
+.table{
+    margin: 0;
+    font-size: 8px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.icon {
+   padding-right: 5px;
+   padding-left: 5px;
+   height: 30px; 
+   width: 30px;
+}
+
+a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    transition: .3s;
+}
+a:hover {
+    transform: scale(1.2);
+}

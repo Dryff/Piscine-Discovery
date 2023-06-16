@@ -1,0 +1,149 @@
+
+body {
+    margin: 0;
+    padding: 0;
+}
+.experience{
+  margin-left: 19vw;
+  color: white;
+}
+nav {
+    position: fixed;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: fit-content;
+    padding: 20px;
+    flex-direction: column;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2vh;
+    opacity: 0;
+    animation: fade-in 2.5s ease forwards;
+    z-index: 3;
+  }
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+nav ul li {
+    display: flex;
+    margin: 10px;
+    align-items: center;
+    justify-content: left;
+
+  }
+
+nav ul li.active {
+    background-color: white;
+  }
+
+  
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+nav ul li i {
+    margin-right: 5px;
+  }
+  
+
+#profil{
+    background-image: url(assets/yone2.jpg);
+    text-align: center;
+    width: 100vw;
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    background-attachment: fixed;
+ }
+
+#experience {
+    width: 100vw;
+    height: 70vh;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    background-image: url(assets/bluewp1.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+}
+#contact {
+  max-height:40vh;
+  background-image: url(assets/bluewp2.jpg);
+  background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+    font-size: 40px;
+    color: white;
+}
+
+
+.experience-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.image-container {
+  flex: 0 0 30%;
+  margin-right: 20px;
+}
+
+.content-container {
+  flex: 1;
+}
+
+#experience-ul {
+  list-style-type: disc;
+}
+
+
+#contact{
+  width: 100vw;
+  height: 100vh;
+}
+
+
+
+/* Style par défaut de l'icône */
+.scroll-link i {
+  color: white;
+  transition: color 0.3s ease;
+}
+
+/* Style par défaut du texte */
+.scroll-link .nav-tooltip {
+  color: white;
+  transition: color 0.3s ease;
+}
+
+/* Style de l'icône et du texte en surbrillance */
+.scroll-link:hover i,
+.scroll-link:hover .nav-tooltip {
+  color: rgb(0, 183, 255);
+}
+
